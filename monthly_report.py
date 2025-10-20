@@ -1,8 +1,11 @@
 def get_user_input():
-    incomes = list(map(int, input("Enter incomes separated by space: ").split()))
-    expenses = list(map(int, input("Enter expenses separated by space: ").split()))
+    try:
+        incomes = list(map(int, input("Enter incomes separated by space: ").split()))
+        expenses = list(map(int, input("Enter expenses separated by space: ").split()))
+    except ValueError:
+        print("Invalid input! Please enter only numbers separated by spaces.")
+        exit()
     return incomes, expenses
-
 def calculate_summary(income, expenses):
     total_income = sum(income)
     total_expenses = sum(expenses)
