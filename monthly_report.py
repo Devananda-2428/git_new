@@ -1,4 +1,7 @@
-# monthly_report.py
+def get_user_input():
+    incomes = list(map(int, input("Enter incomes separated by space: ").split()))
+    expenses = list(map(int, input("Enter expenses separated by space: ").split()))
+    return incomes, expenses
 
 def calculate_summary(income, expenses):
     total_income = sum(income)
@@ -10,5 +13,6 @@ def calculate_summary(income, expenses):
     print(f"Total Expenses: ₹{total_expenses}")
     print(f"Balance: ₹{balance}")
 
-# Example usage
-calculate_summary([5000, 3000, 2000], [2500, 1500, 1000])
+incomes, expenses = get_user_input()
+calculate_summary(incomes, expenses)
+
